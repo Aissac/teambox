@@ -5,7 +5,7 @@
 # Configuration shared between all environments:
 defaults: &defaults
   # The domain from where your app is served
-  app_domain: localhost
+  app_domain: tb.aissaclabs.com
 
   # How many activities should activity feeds display?
   activities_per_page: 25
@@ -13,7 +13,7 @@ defaults: &defaults
 
   # Hour of the day at which daily reminders will be sent
   daily_task_reminder_email_time: 6
-  
+
   # Email confirmaiton is require to login
   email_confirmation_require: true
 
@@ -24,7 +24,7 @@ defaults: &defaults
   # Set to true to use S3 storage instead of local filesystem storage.
   # Automatically true on Heroku.
   # See "config/amazon_s3.yml" for info about credentials.
-  amazon_s3: false
+  amazon_s3: true
   # Upload expiration for public URL, in minutes
   # Take fragment caching into consideration when setting this value
   amazon_s3_expiration: 157680000
@@ -37,9 +37,9 @@ defaults: &defaults
 
   # Enable time tracking
   allow_time_tracking: true
-  
+
   # Enable search (you must have thinking_sphinx installed and configured)
-  # See http://wiki.github.com/teambox/teambox/configuring-search for more 
+  # See http://wiki.github.com/teambox/teambox/configuring-search for more
   # information on configuring search
   allow_search: false
 
@@ -77,7 +77,7 @@ defaults: &defaults
   # This will allow users to post answers and comments by email.
   # When set to true, "reply above this line" notice will be displayed where relevant and accept emails.
   allow_incoming_email: false
-  
+
   delay_data_processing: false
 
   # You will need to:
@@ -94,25 +94,25 @@ defaults: &defaults
   tracking_enabled: true
 
   # Destination where your users could write to ask for help. Accepts an email or website.
-  support: http://help.teambox.com
+  support: http://aissaclabs.com
 
-  help_url: http://help.teambox.com/faqs/using-teambox
-  support_url: http://teambox.com/community
+  help_url: http://aissaclabs.com
+  support_url: http://aissaclabs.com
 
   # You can configure standard oauth provider here, or any supported omni-auth provider
   # in the omni-auth initializer.
   #
   #  providers:
   #  - :provider: github
-  #    :key: 
-  #    :secret: 
+  #    :key:
+  #    :secret:
   #  - :provider: twitter
-  #    :key: 
-  #    :secret: 
+  #    :key:
+  #    :secret:
   #  - :provider: facebook
-  #    :key: 
-  #    :secret: 
-  
+  #    :key:
+  #    :secret:
+
   heroku: <%= !!ENV['HEROKU_TYPE'] %>
 
 development:
